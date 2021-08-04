@@ -70,7 +70,7 @@ p + geom_col(aes(fill = highlight_august)) +
     theme_minimal(base_family = "Roboto Condensed") +
     scale_fill_manual(values = c('#595959', '#ee2536')) +
     labs(title = "MONTHS OF COUNTRIES' NATIONAL DAYS",
-        caption = "gerardchung.com | Codes: https://github.com/gerardchung/"
+        caption = "gerardchung.com | Codes: https://github.com/gerardchung/ndp2021"  
     ) +
     theme(    rect = element_rect(fill = "#ffffff"),
               panel.background = element_rect(fill = "#ffffff", color = "#ffffff"),
@@ -84,5 +84,8 @@ p + geom_col(aes(fill = highlight_august)) +
           plot.title = ggtext::element_markdown(size = 32, face="bold"),
           plot.caption  = element_text(size = 10, hjust = 1, family = "Roboto Condensed", color = "#595959"),
           legend.position = "none"
-          )
+          ) -> plot_final
+
+ggsave("plots/independencedays.png", plot = plot_final, type = 'cairo', width = 9, height = 6.5, dpi = 300, units = "in", bg = "#ffffff")
+
 
