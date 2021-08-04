@@ -25,7 +25,7 @@ rm(tuesdata)
 
 
 # CLEAN DATA ####
-## Credits for this section of code: https://github.com/ZainulArifin1/WeeklyPlot/blob/main/Week_12/commonwealth.R
+## Credits for parts of this section of code: https://github.com/ZainulArifin1/WeeklyPlot/blob/main/Week_12/commonwealth.R
 
 
 month <- 
