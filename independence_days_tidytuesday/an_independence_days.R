@@ -68,9 +68,9 @@ p + geom_col(aes(fill = highlight_august)) +
         size = 7
     ) +
     theme_minimal(base_family = "Roboto Condensed") +
-    scale_fill_manual(values = c('#595959', '#ee2536')) +
+    scale_fill_manual(values = c('#808080', '#ee2536')) +
     labs(title = "MONTHS OF COUNTRIES' NATIONAL DAYS",
-        caption = "gerardchung.com | Codes: https://github.com/gerardchung/ndp2021"  
+        caption = "Source: https://www.worldatlas.com/articles/list-of-independence-days-by-country.html | gerardchung.com | Codes: https://github.com/gerardchung/ndp2021"  
     ) +
     theme(    rect = element_rect(fill = "#ffffff"),
               panel.background = element_rect(fill = "#ffffff", color = "#ffffff"),
