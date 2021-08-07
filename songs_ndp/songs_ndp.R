@@ -229,7 +229,7 @@ sentiment_wrdcount <- tidy_songs %>%
 sentiment_wrdcount_reduced <- 
                     sentiment_wrdcount %>%
                     group_by(sentiment) %>% 
-                    slice_max(n, n = 5) %>% # top five highest counts for each sentiment
+                    slice_max(n, n = 8) %>% # top five highest counts for each sentiment
                     ungroup() %>% 
                     mutate(word = reorder(word, n))
 
@@ -275,7 +275,7 @@ p + geom_col(show.legend = FALSE) +
           )
     ) -> plot_final
 
-ggsave("plots/positivesentiments_words.png", plot = plot_final, type = 'cairo', width = 9, height = 6.5, dpi = 300, units = "in", bg = "#ffffff")
+ggsave("plots/positivesentiments_words.png", plot = plot_final, type = 'cairo', width = 10, height = 6.5, dpi = 300, units = "in", bg = "#ffffff")
 
 
 # SENTIMENT BY SONG #####
@@ -357,7 +357,7 @@ p + geom_point(aes(color = factor(sentiment))) + geom_smooth(method = lm, se = F
 p2 <- ggplot(sentiment_wrdcount_bysong, aes(x = id, y = prop, color = sentiment))
 p2 + 
     geom_point(aes(color = factor(sentiment)), size = 1.3) + 
-    geom_smooth(method = lm, se = F) + 
+    geom_smooth(method = lm, se = F, size = 3, alpha = .6) + 
     ggrepel::geom_text_repel(data = sentiment_wrdcount_bysong %>% filter(id == "5"),
               aes(label = paste("One People, One Nation, One SG (1990)")),
               vjust = +2, 
@@ -410,7 +410,7 @@ p2 + geom_point(aes(color = factor(sentiment))) + geom_smooth(method = loess, se
 
 
 
-
+str_view_all(tail(songs$text), pattern = "can", match = T)
 
 
 
